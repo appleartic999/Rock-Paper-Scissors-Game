@@ -1,5 +1,14 @@
 const choices = ["rock", "paper", "scissors"];
 
+
+// game-> compares what the player and computer had selected, prints the winner with message.
+
+/*
+return value representation:
+    1-> player wins and increase the counter value so that you know how many matches the player won till now
+    0->computer wins
+    2->draw between player and computer(same choice)
+*/
 const game = function (playerSelection, computerSelection) {
     if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
@@ -47,6 +56,9 @@ const game = function (playerSelection, computerSelection) {
     }
 }
 
+/*
+    playGround()-> prints the number of matches player won in the game.
+*/
 
 const playGround = function () {
     const countOfPlayerWins = 0;
