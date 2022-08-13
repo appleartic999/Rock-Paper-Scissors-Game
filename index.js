@@ -61,12 +61,17 @@ const game = function (playerSelection, computerSelection) {
 */
 
 const playGround = function () {
+
     const countOfPlayerWins = 0;
+
     for (let i = 0; i < 5; i++) {
+
         const randomChoice = Math.floor(Math.random() * 3);
         const computerSelection = choices[randomChoice];
-        const playerSelection = prompt("Type your choice").toString().toLowerCase();
+        const playerSelection = prompt("Type your choice").toLowerCase();
+
         const valid = game(playerSelection, computerSelection);
+
         if (valid === false) i--;
         if (valid === 1) countOfPlayerWins++;
         else continue;
@@ -74,4 +79,4 @@ const playGround = function () {
     return countOfPlayerWins;
 }
 
-alert(`You wins ${playGround()} matches out of 5`);
+alert(`You won ${playGround()} matches out of 5`);
