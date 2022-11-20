@@ -27,7 +27,7 @@ function option1() {
     } else {
         winnerMessage.textContent = "Draw"
     }
-    setTimeout(myFunc1, 1200);
+    setTimeout(myFunc1, 1500);
 }
 function option2() {
     document.getElementById("paper").style.border = "2px solid";
@@ -42,7 +42,7 @@ function option2() {
     } else {
         winnerMessage.textContent = "Draw"
     }
-    setTimeout(myFunc2, 1200);
+    setTimeout(myFunc2, 1500);
 }
 function option3() {
     document.getElementById("scissors").style.border = "2px solid";
@@ -58,5 +58,5 @@ function option3() {
     } else {
         winnerMessage.textContent = "Draw"
     }
-    setTimeout(myFunc3, 1200);
+    setTimeout(myFunc3, 1500);
 }
