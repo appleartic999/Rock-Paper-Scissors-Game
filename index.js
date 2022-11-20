@@ -25,7 +25,7 @@ function option1() {
         x.textContent = `${totalScore}`;
         winnerMessage.textContent = "You Win!";
     } else {
-        winnerMessage.textContent = "Oops, it's a Draw"
+        winnerMessage.textContent = "Draw"
     }
     setTimeout(myFunc1, 1200);
 }
@@ -40,7 +40,7 @@ function option2() {
         x.textContent = `${totalScore}`;
         winnerMessage.textContent = "You Win!";
     } else {
-        winnerMessage.textContent = "Oops, it's a Draw"
+        winnerMessage.textContent = "Draw"
     }
     setTimeout(myFunc2, 1200);
 }
