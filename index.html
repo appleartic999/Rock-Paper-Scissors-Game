@@ -2,22 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <h2>Choose any one of them</h2>
-    <div>
-        <span>Rock</span>
-        <span>Paper</span>
-        <span>Scissors</span>
+<div id="content">
+    <div id="main">
+        <div id="title-card">
+            <div id="title">
+                <p>ROCK PAPER SCISSORS</p>
+            </div>
+            <div id="scores">
+                <p id="scores-text">SCORE</p>
+                <p id="total-score">0</p>
+            </div>
+        </div>
+        <div id="winner">
+            <p id="winner-message">Winner: None</p>
+        </div>
+        <div id="buttons">
+            <img src="./images/rock.png" alt="Rock" id="rock" onclick="option1()">
+            <img src="./images/paper.png" alt="Paper" id="paper" onclick="option2()">
+            <img src="./images/scissors.png" alt="Scissors" id="scissors" onclick="option3()">
+        </div>
     </div>
-    <div>
-        <p>Total of five games</p>
+    <div class="attribution">
+        <span>Coded by Artic</span>
     </div>
-    <script src="index.js"></script>
+</div>
+<script src="./app.js"></script>
 </body>
 </html>

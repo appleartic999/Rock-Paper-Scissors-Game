@@ -1,82 +1,62 @@
-const choices = ["rock", "paper", "scissors"];
+const selection = ['rock', 'paper', 'scissors'];
 
+let totalScore = 0;
 
-// game-> compares what the player and computer had selected, prints the winner with message.
-
-/*
-return value representation:
-    1-> player wins and increase the counter value so that you know how many matches the player won till now
-    0->computer wins
-    2->draw between player and computer(same choice)
-*/
-const game = function (playerSelection, computerSelection) {
-    if (playerSelection === "rock") {
-        if (computerSelection === "scissors") {
-            console.log(`You Win! ${playerSelection.toLocaleUpperCase()} beats ${computerSelection.toLocaleUpperCase()}`);
-            return 1;
-        }
-        else if (computerSelection === "paper") {
-            console.log(`You Lose! ${computerSelection.toLocaleUpperCase()} beats ${playerSelection.toLocaleUpperCase()}`);
-            return 0;
-        }
-        else {
-            console.log(`It's a Draw! Both chose ${playerSelection.toLocaleUpperCase()}`);
-            return 2;
-        }
-    } else if (playerSelection === "paper") {
-        if (computerSelection === "rock") {
-            console.log(`You Win! ${playerSelection.toLocaleUpperCase()} beats ${computerSelection.toLocaleUpperCase()}`);
-            return 1;
-        }
-        else if (computerSelection === "scissors") {
-            console.log(`You Lose! ${computerSelection.toLocaleUpperCase()} beats ${playerSelection.toLocaleUpperCase()}`);
-            return 0;
-        }
-        else {
-            console.log(`It's a Draw! Both chose ${playerSelection.toLocaleUpperCase()}`);
-            return 2;
-        }
-    } else if (playerSelection === "scissors") {
-        if (computerSelection === "paper") {
-            console.log(`You Win! ${playerSelection.toLocaleUpperCase()} beats ${computerSelection.toLocaleUpperCase()}`);
-            return 1;
-        }
-        else if (computerSelection === "rock") {
-            console.log(`You Lose! ${computerSelection.toLocaleUpperCase()} beats ${playerSelection.toLocaleUpperCase()}`);
-            return 0;
-        }
-        else {
-            console.log(`It's a Draw! Both chose ${playerSelection.toLocaleUpperCase()}`);
-            return 2;
-        }
+const x = document.getElementById('total-score');
+const winnerMessage = document.getElementById('winner-message');
+function myFunc1() {
+    document.getElementById('rock').style.border = "none";
+}
+function myFunc2() {
+    document.getElementById('paper').style.border = "none";
+}
+function myFunc3() {
+    document.getElementById('scissors').style.border = "none";
+}
+function option1() {
+    document.getElementById("rock").style.border = "2px solid";
+    document.getElementById("rock").style.borderRadius = "15px";
+    document.getElementById("rock").style.borderColor = "rgb(127,255,0)";
+    const randomSelection = Math.trunc(Math.random() * 3);
+    if (randomSelection === 1) {
+        winnerMessage.textContent = `You Lose!`;
+    } else if (randomSelection === 2) {
+        totalScore += 1
+        x.textContent = `${totalScore}`;
+        winnerMessage.textContent = "You Win!";
     } else {
-        console.log("Invalid choice");
-        alert("Enter a valid name as shown");
-        return false;
+        winnerMessage.textContent = "Oops, it's a Draw"
     }
+    setTimeout(myFunc1, 1200);
 }
-
-/*
-    playGround()-> prints the number of matches player won in the game.
-*/
-
-const playGround = function () {
-
-    const countOfPlayerWins = 0;
-
-    for (let i = 0; i < 5; i++) {
-
-        const randomChoice = Math.floor(Math.random() * 3);
-        const computerSelection = choices[randomChoice];
-        const playerSelection = prompt("Type your choice").toLowerCase();
-
-        const valid = game(playerSelection, computerSelection);
-
-        if (valid === false) i--;
-        if (valid === 1) countOfPlayerWins++;
-        else continue;
+function option2() {
+    document.getElementById("paper").style.border = "2px solid";
+    document.getElementById("paper").style.borderColor = "rgb(127,255,0)";
+    const randomSelection = Math.trunc(Math.random() * 3);
+    if (randomSelection === 2) {
+        winnerMessage.textContent = `You Lose!`;
+    } else if (randomSelection === 0) {
+        totalScore += 1
+        x.textContent = `${totalScore}`;
+        winnerMessage.textContent = "You Win!";
+    } else {
+        winnerMessage.textContent = "Oops, it's a Draw"
     }
-    return countOfPlayerWins;
+    setTimeout(myFunc2, 1200);
 }
-
-alert(`You won ${playGround()} matches out of 5`);
+function option3() {
+    document.getElementById("scissors").style.border = "2px solid";
+    document.getElementById("scissors").style.borderRadius = "15px";
+    document.getElementById("scissors").style.borderColor = "rgb(127,255,0)";
+    const randomSelection = Math.trunc(Math.random() * 3);
+    if (randomSelection === 0) {
+        winnerMessage.textContent = `You Lose!`;
+    } else if (randomSelection === 1) {
+        totalScore += 1
+        x.textContent = `${totalScore}`;
+        winnerMessage.textContent = "You Win!";
+    } else {
+        winnerMessage.textContent = "Draw"
+    }
+    setTimeout(myFunc3, 1200);
+}
