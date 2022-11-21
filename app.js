@@ -2,12 +2,12 @@ function randomSelection() {
     return Math.trunc(Math.random() * 3);
 }
 
-let score = 0;
+let playerScore = 0, computerScore = 0;
 
 function myFunc() {
-    document.getElementById('rock').style.border='none';
-    document.getElementById('paper').style.border='none';
-    document.getElementById('scissors').style.border='none';
+    document.getElementById('rock').style.border = 'none';
+    document.getElementById('paper').style.border = 'none';
+    document.getElementById('scissors').style.border = 'none';
 }
 
 function decideWinner(e) {
@@ -28,31 +28,37 @@ function decideWinner(e) {
         if (computerSelection === 0) {
             winnerMessage.textContent = `Draw, both chose Rock`;
         } else if (computerSelection === 1) {
+            computerScore++;
+            document.getElementById('ai-score').textContent=`${computerScore}`;
             winnerMessage.textContent = `You Lost`;
         } else {
             winnerMessage.textContent = `You Won`;
-            score++;
-            document.getElementById('total-score').textContent = `${score}`;
+            playerScore++;
+            document.getElementById('your-score').textContent = `${playerScore}`;
         }
     } else if (playerChoice === 'paper') {
         if (computerSelection === 1) {
             winnerMessage.textContent = `Draw, both chose Paper`;
         } else if (computerSelection === 2) {
+            computerScore++;
+            document.getElementById('ai-score').textContent=`${computerScore}`;
             winnerMessage.textContent = `You Lost`;
         } else {
             winnerMessage.textContent = `You Won`;
-            score++;
-            document.getElementById('total-score').textContent = `${score}`;
+            playerScore++;
+            document.getElementById('total-score').textContent = `${playerScore}`;
         }
     } else {
         if (computerSelection === 2) {
             winnerMessage.textContent = `Draw, both chose Scissors`;
         } else if (computerSelection === 0) {
+            computerScore++;
+            document.getElementById('ai-score').textContent=`${computerScore}`;
             winnerMessage.textContent = `You Lost`;
         } else {
             winnerMessage.textContent = `You Won`;
-            score++;
-            document.getElementById('total-score').textContent = `${score}`;
+            playerScore++;
+            document.getElementById('total-score').textContent = `${playerScore}`;
         }
     }
     setTimeout(myFunc, 1250);

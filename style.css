@@ -35,9 +35,11 @@ span {
     border-radius: 15px;
     padding: 10px;
 }
-#title{
+
+#title {
     width: 10%;
 }
+
 img {
     border-radius: 15px;
 }
@@ -63,9 +65,21 @@ img:hover {
     }
 }
 
+@media screen and (min-width: 1000px) {
+    img {
+        width: 25%;
+        height: auto;
+    }
+}
+
 #scores {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#score {
+    display: flex;
+    gap: 58px;
 }
