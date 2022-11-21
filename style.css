@@ -35,7 +35,9 @@ span {
     border-radius: 15px;
     padding: 10px;
 }
-
+#title{
+    width: 10%;
+}
 img {
     border-radius: 15px;
 }
