@@ -1,3 +1,5 @@
+const choices = ['rock', 'paper', 'scissors'];
+
 function randomSelection() {
     return Math.trunc(Math.random() * 3);
 }
@@ -17,7 +19,12 @@ function decideWinner(e) {
     const playerChoice = e.target.id;
     const winnerMessage = document.getElementById('winner-message');
     if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
-        e.target.style.border = "2px rgb(127,255,0) solid";
+        e.target.style.border = "4px rgb(127,255,0) solid";
+    }
+    if (choices[computerSelection] !== playerChoice) {
+        document.getElementById(`${choices[computerSelection]}`).style.border = "4px red solid";
+    }else{
+        document.getElementById(`${choices[computerSelection]}`).style.border = "4px blue solid";
     }
     /*
     0->Rock
@@ -29,7 +36,7 @@ function decideWinner(e) {
             winnerMessage.textContent = `Draw, both chose Rock`;
         } else if (computerSelection === 1) {
             computerScore++;
-            document.getElementById('ai-score').textContent=`${computerScore}`;
+            document.getElementById('ai-score').textContent = `${computerScore}`;
             winnerMessage.textContent = `You Lost`;
         } else {
             winnerMessage.textContent = `You Won`;
@@ -41,7 +48,7 @@ function decideWinner(e) {
             winnerMessage.textContent = `Draw, both chose Paper`;
         } else if (computerSelection === 2) {
             computerScore++;
-            document.getElementById('ai-score').textContent=`${computerScore}`;
+            document.getElementById('ai-score').textContent = `${computerScore}`;
             winnerMessage.textContent = `You Lost`;
         } else {
             winnerMessage.textContent = `You Won`;
@@ -53,7 +60,7 @@ function decideWinner(e) {
             winnerMessage.textContent = `Draw, both chose Scissors`;
         } else if (computerSelection === 0) {
             computerScore++;
-            document.getElementById('ai-score').textContent=`${computerScore}`;
+            document.getElementById('ai-score').textContent = `${computerScore}`;
             winnerMessage.textContent = `You Lost`;
         } else {
             winnerMessage.textContent = `You Won`;
@@ -61,7 +68,7 @@ function decideWinner(e) {
             document.getElementById('total-score').textContent = `${playerScore}`;
         }
     }
-    setTimeout(myFunc, 1250);
+    setTimeout(myFunc, 1350);
 }
 
 window.addEventListener('click', decideWinner);
