@@ -53,7 +53,7 @@ function decideWinner(e) {
         } else {
             winnerMessage.textContent = `You Won`;
             playerScore++;
-            document.getElementById('total-score').textContent = `${playerScore}`;
+            document.getElementById('your-score').textContent = `${playerScore}`;
         }
     } else {
         if (computerSelection === 2) {
@@ -65,7 +65,7 @@ function decideWinner(e) {
         } else {
             winnerMessage.textContent = `You Won`;
             playerScore++;
-            document.getElementById('total-score').textContent = `${playerScore}`;
+            document.getElementById('your-score').textContent = `${playerScore}`;
         }
     }
     setTimeout(myFunc, 1350);
